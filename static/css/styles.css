@@ -1,0 +1,224 @@
+/* General body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom right, #eef2f3, #8e9eab);
+    color: #333;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased; /* Smoothens text rendering */
+}
+
+/* Navbar styling */
+.navbar {
+    background-color: #ffffff;
+    border-bottom: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar a {
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover, .navbar a:focus {
+    color: #007bff;
+    text-decoration: none;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(to right, rgba(78, 205, 196, 0.8), rgba(162, 222, 208, 0.8)), 
+        url('../images/hero.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 80px 20px; /* Adjusted padding for quicker visual rendering */
+    border-radius: 0 0 10px 10px;
+}
+
+.hero h1 {
+    font-size: 42px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.search-bar {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.search-bar input {
+    padding: 10px;
+    border-radius: 5px 0 0 5px;
+    border: 1px solid #ddd;
+    font-size: 14px; /* Reduced size for better fit */
+    width: 280px; /* Reduced width to avoid overflows on smaller devices */
+    transition: box-shadow 0.3s ease;
+}
+
+.search-bar input:focus {
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+}
+
+.search-bar button {
+    padding: 10px 15px; /* Reduced padding for faster rendering */
+    border: none;
+    background-color: #007bff;
+    color: white;
+    font-size: 14px;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.search-bar button:hover, .search-bar button:focus {
+    background-color: #0056b3;
+}
+
+/* Travel Package Cards */
+.places-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjusted min-width for responsiveness */
+    gap: 20px;
+    padding: 20px; /* Reduced padding for faster loading */
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.place-card {
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optimized shadow for performance */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.place-card:hover {
+    transform: scale(1.03); /* Reduced scaling for better performance */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.place-card img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9; /* Maintains aspect ratio */
+    object-fit: cover;
+     /* Ensures smooth rendering */
+    filter: brightness(1); /* Adjusts for consistent brightness */
+}
+
+
+.place-info {
+    padding: 10px;
+    text-align: center;
+}
+
+.place-info h3 {
+    font-size: 16px;
+    color: #007bff;
+    margin: 0;
+    transition: color 0.3s ease;
+}
+
+.place-info h3:hover {
+    color: #0056b3;
+}
+
+.place-info p {
+    margin: 5px 0 0;
+    font-size: 13px;
+    color: #666;
+}
+
+/* Section Titles */
+.section-title {
+    font-size: 22px;
+    text-align: left;
+    margin: 20px auto;
+    padding: 0 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Back Button for Place Details */
+.back-button {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 20px auto;
+    transition: background 0.3s ease;
+}
+
+.back-button:hover, .back-button:focus {
+    background-color: #0056b3;
+}
+
+/* Place Detail Page Styling */
+.place-detail {
+    text-align: center;
+    padding: 40px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.place-detail h1 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.place-detail p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.place-detail img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+/* Footer Styling */
+footer {
+    background: #f8f9fa;
+    padding: 10px 0;
+    text-align: center;
+    color: #666;
+    font-size: 12px;
+    border-top: 1px solid #ddd;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .places-container {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjusted for smaller screens */
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+}

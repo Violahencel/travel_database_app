@@ -1,0 +1,99 @@
+{% block content %}
+<div class="container">
+    <h2>Login</h2>
+    <form method="POST" action="/login" autocomplete="off">
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" name="username" autocomplete="off" required><br>
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" autocomplete="new-password" required><br><br>
+        <button type="submit">Login</button>
+    </form>
+    <p><a href="/register">New user? Register here</a> | <a href="/forgot_password">Forgot Password?</a></p>
+</div>
+
+<style>
+/* Styles for Login Page */
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom right, #eef2f3, #8e9eab);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 100%;
+}
+
+.container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.container label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+    color: #555;
+}
+
+.container input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+.container input:focus {
+    outline: none;
+    border-color: #4facfe;
+    box-shadow: 0px 0px 5px rgba(79, 172, 254, 0.5);
+}
+
+.container button {
+    width: 100%;
+    background: #4facfe;
+    border: none;
+    color: white;
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.container button:hover {
+    background: #3b8bfe;
+}
+
+.container a {
+    text-decoration: none;
+    color: #4facfe;
+    font-size: 14px;
+}
+
+.container a:hover {
+    text-decoration: underline;
+}
+
+.container p {
+    text-align: center;
+    margin-top: 15px;
+}
+</style>
+{% endblock %}
