@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="place-detail">
+    <!-- Place Name -->
+    <h1>{{ place.name }}</h1>
+    
+    <!-- Place Image -->
+    <img src="{{ url_for('static', filename='images/' + place.image) }}" alt="{{ place.name }}" class="place-image">
+    
+    <!-- Place Details -->
+    <p>{{ place.details }}</p>
+    
+    <!-- Pricing Section -->
+    <h3>Pricing</h3>
+    <p>{{ place.pricing }}</p>
+
+    <!-- Button to View Itinerary -->
+    <div class="itinerary-button-container" style="margin-top: 20px;">
+        <a href="{{ url_for('itinerary_page', place_id=place_id) }}" class="itinerary-button">
+            Check Itinerary
+        </a>
+        
+    </div>
+
+    <!-- Back Button -->
+    <div class="back-button-container" style="margin-top: 20px;">
+        <a href="{{ url_for('home') }}" class="back-button">Back to Places</a>
+    </div>
+</div>
+
+<style>
+/* Place Detail Styling */
+.place-detail {
+    text-align: center;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 800px;
+    font-family: Arial, sans-serif;
+}
+
+/* Image Styling */
+.place-image {
+    width: 80%;
+    max-width: 600px;
+    height: auto;
+    margin: 20px 0;
+    border-radius: 10px;
+}
+
+/* Button Styling */
+.itinerary-button-container {
+    text-align: center;
+}
+
+.itinerary-button {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #28a745;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.itinerary-button:hover {
+    background-color: #218838;
+}
+
+.back-button {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.back-button:hover {
+    background-color: #0056b3;
+}
+</style>
+{% endblock %}

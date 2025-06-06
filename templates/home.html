@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- Hero Section -->
+<header class="hero">
+    <h1>Let The Adventure Begin</h1>
+    <p>Explore the top destinations in style</p>
+    <div class="search-bar">
+        <form method="POST" action="/search">
+            <input type="text" name="search_query" placeholder="Search any Destination..." required>
+            <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+    </div>
+</header>
+
+<!-- Travel Packages Section -->
+<div class="container mt-5">
+    <h2 class="text-center">Explore Our Travel Packages</h2>
+    <div class="travel-options">
+        <!-- Dynamically render travel destinations with clickable images -->
+        <div class="places-container">
+            {% for place in places %}
+            <div class="destination place-card">
+                <a href="/place/{{ place.id }}">
+                    <img src="{{ url_for('static', filename='images/' + place.image) }}" alt="{{ place.name }}" loading="lazy">
+                    <div class="destination-info place-info">
+                        <h3>{{ place.name }}</h3>
+                        <p>{{ place.description }}</p>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

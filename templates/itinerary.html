@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="itinerary-page">
+    <h1>Itinerary for {{ place.name }}</h1>
+
+    <h3>Budget Itinerary</h3>
+    <ul>
+        {% for day in itineraries.low %}
+            <li>{{ day }}</li>
+        {% endfor %}
+    </ul>
+
+    <h3>Mid-Range Itinerary</h3>
+    <ul>
+        {% for day in itineraries.medium %}
+            <li>{{ day }}</li>
+        {% endfor %}
+    </ul>
+
+    <h3>Luxury Itinerary</h3>
+    <ul>
+        {% for day in itineraries.high %}
+            <li>{{ day }}</li>
+        {% endfor %}
+    </ul>
+
+    <!-- Back Button -->
+    <div class="back-button-container" style="margin-top: 20px;">
+        <a href="{{ url_for('place_detail', place_id=place_id) }}" class="back-button">
+            Back to Details
+        </a>
+    </div>
+</div>
+
+<style>
+.itinerary-page {
+    text-align: center;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 800px;
+    font-family: Arial, sans-serif;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin: 8px 0;
+    font-size: 16px;
+    text-align: left;
+}
+
+.back-button {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.back-button:hover {
+    background-color: #0056b3;
+}
+</style>
+{% endblock %}
